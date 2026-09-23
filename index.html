@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#7c3aed" />
+<title>RK RAJA XWD — Facebook Report Education Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>RK RAJA XWD</h1>
+    <p>Facebook Report Education Dashboard</p>
+  </header>
+
+  <main>
+
+    <!-- Educational disclaimer -->
+    <div class="notice fade-in">
+      <strong>⚠ Simulation only</strong>
+      This dashboard is a front-end educational demonstration. It does <b>not</b> send reports,
+      does <b>not</b> contact Facebook, and <b>cannot</b> disable or remove any account.
+      All counters are animated for illustration purposes only.
+    </div>
+
+    <!-- TARGET -->
+    <section class="card fade-in">
+      <span class="card-label">Target 🎯</span>
+
+      <div class="field">
+        <label for="targetInput">Facebook profile / page / post URL or ID</label>
+        <input
+          id="targetInput"
+          type="text"
+          inputmode="url"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="https://facebook.com/username or 100012345678" />
+        <div class="error-msg" id="inputError">Please enter a target URL or ID to run the simulation.</div>
+      </div>
+
+      <div class="field">
+        <label for="reasonSelect">Report reason</label>
+        <select id="reasonSelect">
+          <option value="harassment">Harassment or bullying</option>
+          <option value="hate">Hate speech</option>
+          <option value="false">False information</option>
+          <option value="spam">Spam or scam</option>
+          <option value="violence">Violence or dangerous content</option>
+          <option value="ip">Intellectual property violation</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="btn-row">
+        <button id="startBtn" class="btn btn-start" type="button">Start</button>
+        <button id="stopBtn" class="btn btn-stop" type="button" disabled>Stop</button>
+      </div>
+    </section>
+
+    <!-- LIVE DASHBOARD -->
+    <section class="card dash-card fade-in">
+      <div class="dash-head">
+        <span class="card-label">Live Dashboard</span>
+        <span class="pill idle" id="statusPill" aria-live="polite">IDLE</span>
+      </div>
+
+      <div class="activity">
+        <div class="bars" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <span class="activity-text" id="activityText">Idle — no activity</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Target</span>
+        <span class="stat-value" id="targetValue">—</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Reports requested <em class="demo-badge">DEMO</em></span>
+        <span class="stat-value num" id="reportsValue">0</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Successful official-flow opens <em class="demo-badge">DEMO</em></span>
+        <span class="stat-value num" id="opensValue">0</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Last action</span>
+        <span class="stat-value time" id="lastValue">—</span>
+      </div>
+
+      <button class="ghost-btn" id="resetBtn" type="button">Reset counters</button>
+    </section>
+
+    <!-- OFFICIAL REPORTING -->
+    <section class="card official-card fade-in">
+      <span class="card-label">Official Reporting</span>
+      <p class="hint">
+        Want to submit a genuine report? Use Facebook's own Help Centre flow — it opens in a
+        new tab and is handled entirely by Facebook.
+      </p>
+      <button class="btn btn-official" id="officialBtn" type="button" style="margin-top:16px;">
+        Open Official Facebook Report
+      </button>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="foot-brand">RK RAJA XWD © 2026</div>
+    <div class="foot-sub">Educational Demonstration — Automated Facebook Reports</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
